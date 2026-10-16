@@ -20,7 +20,7 @@ module Traffic_Light_Time(
               SEC1 = 4'b0011;
 
     always @(posedge clk or posedge clr) begin
-        if (clr == 1'b1) begin
+        if (clr) begin
             state <= S0;
             count <= 0;
         end
@@ -30,8 +30,7 @@ module Traffic_Light_Time(
                     if (count < SEC5) begin
                         state <= S0;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S1;
                         count <= 0;
                     end
@@ -41,8 +40,7 @@ module Traffic_Light_Time(
                     if (count < SEC1) begin
                         state <= S1;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S2;
                         count <= 0;
                     end
@@ -52,8 +50,7 @@ module Traffic_Light_Time(
                     if (count < SEC1) begin
                         state <= S2;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S3;
                         count <= 0;
                     end
@@ -63,8 +60,7 @@ module Traffic_Light_Time(
                     if (count < SEC5) begin
                         state <= S3;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S4;
                         count <= 0;
                     end
@@ -74,8 +70,7 @@ module Traffic_Light_Time(
                     if (count < SEC1) begin
                         state <= S4;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S5;
                         count <= 0;
                     end
@@ -85,8 +80,7 @@ module Traffic_Light_Time(
                     if (count < SEC1) begin
                         state <= S5;
                         count <= count + 1'b1;
-                    end
-                    else begin
+                    end else begin
                         state <= S0;
                         count <= 0;
                     end
