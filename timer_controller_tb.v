@@ -12,14 +12,14 @@ module timer_controller_tb;
         .lights(lights)
     );
 
-    always #5 clk = ~clk;
+    always #10 clk = ~clk;
 
     initial begin
         $dumpfile("dump.vcd");
         $dumpvars(0, timer_controller_tb);
 
-        #12 clr = 0;
-        #520 $finish;
+        #13 clr = 0;
+        #1000 $finish;
     end
 
 endmodule
