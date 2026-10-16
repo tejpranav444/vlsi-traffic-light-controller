@@ -25,13 +25,15 @@ module testbench;
         $dumpfile("dump.vcd");
         $dumpvars(0, testbench);
 
-        #12 clr = 0;
+        clr = 1;
+        #13 clr = 0;
 
-        #10 SNS2 = 1;
-        #10 SNS2 = 0;
-
-        #30 SNS1 = 1;
-        #10 SNS1 = 0;
+        SNS1 = 0; SNS2 = 0; #10;
+        SNS1 = 0; SNS2 = 1; #40;
+        SNS1 = 0; SNS2 = 0; #40;
+        SNS1 = 1; SNS2 = 0; #30;
+        SNS1 = 0; SNS2 = 0; #20;
+        SNS1 = 0; SNS2 = 1;
 
         #30 $finish;
     end
